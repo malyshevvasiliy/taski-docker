@@ -154,7 +154,7 @@ jobs:
           tags: vasets/taski_gateway:latest
   
   runs-on: ubuntu-latest
-    needs: 
+    needs:
       # Дождёмся билда всех образов Taski
       - build_and_push_to_docker_hub
       - build_frontend_and_push_to_docker_hub
