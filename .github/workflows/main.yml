@@ -146,7 +146,7 @@ jobs:
           context: ./gateway/
           push: true
           # Тут вместо username должен быть ваш логин на Docker Hub
-          tags: ${{ secrets.DOCKER_USERNAME }}/taski_gateway:latest
+          tags: vasets/taski_gateway:latest
   
   deploy:
     runs-on: ubuntu-latest
