@@ -1,7 +1,7 @@
 """
 WSGI config for backend project.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+It exposes the WSGI callable as a module-level variable named ``application``
 
 https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 """
