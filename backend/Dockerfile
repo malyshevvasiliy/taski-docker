@@ -1,10 +1,7 @@
 FROM python:3.9-slim
 WORKDIR /app
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-COPY ./requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt --no-cache-dir
-COPY ./entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN pip install gunicorn==20.1.0
+COPY requirements.txt .
+RUN pip install -r requirements.txt --no-cache-dir
 COPY . .
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "backend.wsgi"]
